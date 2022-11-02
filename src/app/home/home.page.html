@@ -1,20 +1,34 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Song List
     </ion-title>
+    <ion-button slot="end" routerLink="/form-song">
+      <ion-icon slot="icon-only" name="add"></ion-icon>
+    </ion-button>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content class="ion-padding" [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Song</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-grid [fixed]="true">
+
+    <ion-card *ngFor="let song of this.songData$ | async" routerLink="/song-detail/{{song.id}}">
+      <ion-card-header>
+        {{song.songName}}
+      </ion-card-header>
+      <ion-card-content>
+        Artist Name: {{song.artistName}}
+      </ion-card-content>
+    </ion-card>
+
+  </ion-grid>
+
+
+
 </ion-content>
