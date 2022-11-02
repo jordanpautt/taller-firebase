@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Create Song</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-grid [fixed]="true">
+    <app-song-form (emitDataForm)="this.createSong($event)"></app-song-form>
+  </ion-grid>
+
+</ion-content>

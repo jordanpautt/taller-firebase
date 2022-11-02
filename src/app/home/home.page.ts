@@ -1,12 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FirebaseService } from '../services/firebase.service';
+import { Observable } from 'rxjs';
+import { ISong } from '../interface/song.interface';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
+export class HomePage implements OnInit {
 
-  constructor() {}
+  public songData$: Observable<ISong[]>;
+
+  constructor(private firebaseService: FirebaseService) { }
+
+  ngOnInit(): void {
+    this.songData$ = this.firebaseService.getSong();
+  }
 
 }

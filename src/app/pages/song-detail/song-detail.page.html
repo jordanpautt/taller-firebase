@@ -1,0 +1,34 @@
+<ion-header *ngIf="songData$ | async as song">
+  <ion-toolbar>
+    <ion-title>{{ song.songName}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content class="ion-padding" *ngIf="songData$ | async as song">
+  <h3>Artirst</h3>
+  <p>
+    The song {{ song.songName}} was released by {{ song.artistName}}.
+  </p>
+
+  <h3>Album</h3>
+  <p>
+    It was part of the {{ song.albumName}} album.
+  </p>
+
+  <h3>
+    Description
+  </h3>
+  <p>
+    {{ song.songDescription}}
+  </p>
+  <ion-button color="success" expand="block" routerLink="/update-song/{{song.id}}">
+    <ion-icon slot="start" name="create-outline"></ion-icon>Edit Song
+  </ion-button>
+  <ion-button color="danger" expand="block" (click)="deleteSong()">
+    <ion-icon slot="start" name="trash-outline"></ion-icon>Delete Song
+  </ion-button>
+</ion-content>

@@ -1,0 +1,39 @@
+<form [formGroup]="this.formSong" (submit)="this.onSubmit()">
+
+  <ion-item class="ion-align-items-center">
+    <ion-label position="floating">
+      Song Name
+    </ion-label>
+    <ion-input color="dark" formControlName="songName" type="text" placeholder="What's this song called?">
+    </ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">
+      Artist Name
+    </ion-label>
+    <ion-input color="dark" formControlName="artistName" type="text" placeholder="What's sings this song?">
+    </ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">
+      Album Name
+    </ion-label>
+    <ion-input color="dark" formControlName="albumName" type="text" placeholder="What's this album's name?">
+    </ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">
+      Song Description
+    </ion-label>
+    <ion-textarea color="dark" formControlName="songDescription" type="text" placeholder="What's this song about?">
+    </ion-textarea>
+  </ion-item>
+
+  <ion-button expand="block" type="submit" [disabled]="this.formSong.invalid">
+    <ion-icon slot="start" name="add-circle-outline"></ion-icon>
+    Add song
+  </ion-button>
+</form>
