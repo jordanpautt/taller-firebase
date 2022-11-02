@@ -1,0 +1,7 @@
+{
+  "name": "tallerFirebase",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
