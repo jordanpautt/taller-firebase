@@ -1,14 +1,15 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ISong } from 'src/app/interface/song.interface';
+import { ISong } from 'src/app/interface/index.interface';
 
 @Component({
   selector: 'app-song-form',
   templateUrl: './song-form.component.html',
   styleUrls: ['./song-form.component.scss'],
 })
-export class SongFormComponent implements OnInit {
-
+export class SongFormComponent implements OnInit, OnChanges {
+  @Input() titleButton = '';
+  @Input() updateData: ISong = null;
   @Output() emitDataForm = new EventEmitter<ISong>();
   formSong: FormGroup = this.formBuilder.group({});
 
@@ -17,9 +18,14 @@ export class SongFormComponent implements OnInit {
   ngOnInit() {
     this.buildForm();
   }
+  ngOnChanges(changes: SimpleChanges): void {
+    if (this.updateData) {
+      this.formSong.patchValue({ ...this.updateData });
+    }
+  }
+
   public async onSubmit() {
     const songFormValue = this.formSong.value as ISong;
-
     this.emitDataForm.emit(songFormValue);
     this.formSong.reset();
   }
@@ -31,6 +37,8 @@ export class SongFormComponent implements OnInit {
       songDescription: ['', Validators.required],
       songName: ['', Validators.required],
     });
+
+
   }
 
 

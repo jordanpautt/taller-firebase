@@ -1,38 +1,20 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Song List
-    </ion-title>
-    <ion-button class="ion-margin" slot="end" routerLink="/form-song">
-      <ion-icon slot="icon-only" name="add"></ion-icon>
-    </ion-button>
-    <ion-progress-bar *ngIf="(this.songData$ | async) === null" type="indeterminate"></ion-progress-bar>
-  </ion-toolbar>
-</ion-header>
+<ion-tabs>
 
-<ion-content class="ion-padding" [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Song</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="song">
+      <ion-icon name="musical-notes-outline"></ion-icon>
+      <ion-label>Song</ion-label>
+    </ion-tab-button>
 
-  <ion-grid [fixed]="true">
+    <ion-tab-button tab="singers">
+      <ion-icon name="caret-forward-circle-outline"></ion-icon>
+      <ion-label>Singers</ion-label>
+    </ion-tab-button>
 
-    <ion-card *ngFor="let song of this.songData$ | async" routerLink="/song-detail/{{song.id}}">
-      <ion-card-header>
-        <ion-text color="primary">
-          {{song.songName}}
-        </ion-text>
+    <ion-tab-button tab="recording">
+      <ion-icon name="disc-outline"></ion-icon>
+      <ion-label>Recording</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
 
-      </ion-card-header>
-      <ion-card-content>
-        Artist Name: {{song.artistName}}
-      </ion-card-content>
-    </ion-card>
-
-  </ion-grid>
-
-
-
-</ion-content>
+</ion-tabs>

@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  hostApi: 'https://jsonplaceholder.typicode.com',
   firebaseConfig: {
     apiKey: 'AIzaSyBRO-Qyvjc9OUDroBVp0UUHnhbEMrFs6J4',
     authDomain: 'taller-firebase-a75b4.firebaseapp.com',

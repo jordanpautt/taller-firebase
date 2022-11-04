@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FirebaseService } from 'src/app/services/firebase.service';
 import { Observable } from 'rxjs';
-import { ISong } from 'src/app/interface/song.interface';
+import { ISong } from 'src/app/interface/index.interface';
 import { AlertController } from '@ionic/angular';
 
 @Component({

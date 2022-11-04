@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Recording Update</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home/recording"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid [fixed]="true">
+    <app-recording-form titleButton="Edit" [updateData]="this.recordingData$ | async"
+      (emitDataForm)="this.updateRecording($event)"></app-recording-form>
+  </ion-grid>
+</ion-content>

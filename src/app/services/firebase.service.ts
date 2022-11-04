@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ISong } from '../interface/song.interface';
+import { ISong } from '../interface/index.interface';
 import {
   AngularFirestore,
   AngularFirestoreCollection,
@@ -31,6 +31,10 @@ export class FirebaseService {
   ): Promise<void> {
     const idDoc = this.firestore.createId();
     return this.songRef.doc(idDoc).set({ ...songCreate, id: idDoc });
+  }
+
+  updateSong(songData: ISong, idDoc: string): Promise<void> {
+    return this.songRef.doc(idDoc).update(songData);
   }
 
   deleteSong(idDoc: string): Promise<void> {

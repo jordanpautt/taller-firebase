@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Recording studios</ion-title>
+    <ion-buttons class="ion-margin" slot="end" routerLink="/recording-create">
+      <ion-icon slot="icon-only" name="add"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-grid [fixed]="true">
+
+    <ion-card *ngFor="let item of this.recordingData$ | async">
+      <ion-card-header>
+        <ion-text color="primary">
+          {{item.nameRecording}}
+        </ion-text>
+      </ion-card-header>
+      <ion-card-content>
+        Type melody: {{item.typeOfMelody}}
+      </ion-card-content>
+      <div style="display: flex; justify-content:end;">
+        <ion-button size="small" shape="round" fill="outline" color="danger" (click)="deleteRecording(item.id)">
+          <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+        </ion-button>
+        <ion-button size="small" shape="round" color="success" routerLink="/recording-update/{{item.id}}">
+          <ion-icon slot="icon-only" name="pencil-outline"></ion-icon>
+        </ion-button>
+      </div>
+    </ion-card>
+
+  </ion-grid>
+</ion-content>

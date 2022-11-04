@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoadingController } from '@ionic/angular';
 import { FirebaseService } from 'src/app/services/firebase.service';
-import { ISong } from '../../interface/song.interface';
+import { ISong } from '../../interface/index.interface';
 
 @Component({
   selector: 'app-form-song',

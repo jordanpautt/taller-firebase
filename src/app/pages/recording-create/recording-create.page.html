@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Recording Create</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home/recording"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid [fixed]="true">
+    <app-recording-form titleButton="Add" (emitDataForm)="this.createRecording($event)"></app-recording-form>
+  </ion-grid>
+</ion-content>

@@ -26,7 +26,8 @@
     {{ song.songDescription}}
   </p>
   <ion-button color="success" expand="block" routerLink="/update-song/{{song.id}}">
-    <ion-icon slot="start" name="create-outline"></ion-icon>Edit Song
+    <ion-icon slot="start" name="pencil-outline"></ion-icon>
+    Edit Song
   </ion-button>
   <ion-button color="danger" expand="block" (click)="deleteSong()">
     <ion-icon slot="start" name="trash-outline"></ion-icon>Delete Song

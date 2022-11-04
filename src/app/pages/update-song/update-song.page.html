@@ -1,14 +1,17 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>updateSong</ion-title>
+    <ion-title>Update Song</ion-title>
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-back-button defaultHref="home"></ion-back-button>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
-  <ion-buttons slot="start">
-    <ion-back-button defaultHref="home"></ion-back-button>
-  </ion-buttons>
 </ion-header>
 
 <ion-content class="ion-padding">
   <ion-grid [fixed]="true">
-    <app-song-form (emitDataForm)="this.updateSong($event)"></app-song-form>
+    <app-song-form titleButton="Edit Song" [updateData]="this.songData$ | async"
+      (emitDataForm)="this.updateSong($event)"></app-song-form>
   </ion-grid>
 </ion-content>

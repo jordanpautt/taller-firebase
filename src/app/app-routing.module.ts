@@ -12,7 +12,7 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'form-song',
+    path: 'create-song',
     loadChildren: () => import('./pages/create-song/form-song.module').then(m => m.FormSongPageModule)
   },
   {
@@ -23,6 +23,15 @@ const routes: Routes = [
     path: 'update-song/:id',
     loadChildren: () => import('./pages/update-song/update-song.module').then(m => m.UpdateSongPageModule)
   },
+  {
+    path: 'recording-create',
+    loadChildren: () => import('./pages/recording-create/recording-create.module').then(m => m.RecordingCreatePageModule)
+  },
+  {
+    path: 'recording-update/:id',
+    loadChildren: () => import('./pages/recording-update/recording-update.module').then(m => m.RecordingUpdatePageModule)
+  },
+
 ];
 
 @NgModule({
