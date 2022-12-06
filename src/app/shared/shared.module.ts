@@ -5,8 +5,6 @@ import { SongFormComponent } from '../components/song-form/song-form.component';
 import { IonicModule } from '@ionic/angular';
 import { RecordingFormComponent } from '../components/recording-form/recording-form.component';
 
-
-
 @NgModule({
   declarations: [SongFormComponent, RecordingFormComponent],
   imports: [
@@ -15,6 +13,6 @@ import { RecordingFormComponent } from '../components/recording-form/recording-f
     FormsModule,
     ReactiveFormsModule
   ],
-  exports: [SongFormComponent, RecordingFormComponent]
+  exports: [SongFormComponent, RecordingFormComponent, FormsModule, ReactiveFormsModule]
 })
 export class SharedModule { }

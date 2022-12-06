@@ -18,6 +18,7 @@ export class SongFormComponent implements OnInit, OnChanges {
   ngOnInit() {
     this.buildForm();
   }
+
   ngOnChanges(changes: SimpleChanges): void {
     if (this.updateData) {
       this.formSong.patchValue({ ...this.updateData });

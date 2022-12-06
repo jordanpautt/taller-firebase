@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="this.registerForm" (submit)="this.signUp()">
+
+    <h4>Registrar usuario por email</h4>
+    <ion-item class="ion-align-items-center">
+      <ion-label position="floating">
+        Email
+      </ion-label>
+      <ion-input color="dark" formControlName="email" type="text" placeholder="example@mail.com">
+      </ion-input>
+    </ion-item>
+
+    <ion-item class="ion-align-items-center">
+      <ion-label position="floating">
+        Password
+      </ion-label>
+      <ion-input color="dark" formControlName="password" type="password">
+      </ion-input>
+    </ion-item>
+    <ion-button expand="block" type="submit" [disabled]="this.registerForm.invalid">
+      Registrase
+    </ion-button>
+    <p>YA estas registrado? <a routerLink="../login"> ingresa</a></p>
+  </form>
+</ion-content>
