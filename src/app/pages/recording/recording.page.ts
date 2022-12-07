@@ -19,6 +19,7 @@ export class RecordingPage implements OnInit {
   ngOnInit(): void {
     this.recordingData$ = this.recordingService.getRecording();
   }
+
   async deleteRecording(idDoc: string) {
 
     const alert = await this.alertCtrl.create({

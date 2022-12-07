@@ -20,3 +20,11 @@ export interface IRecording {
   numberOfCabins: number;
   owner: string;
 }
+
+export interface IConcert {
+  id: string;
+  nameConcert: string;
+  valueEntry: number;
+  costConcert: number;
+  dateConcert: Date | string;
+}
